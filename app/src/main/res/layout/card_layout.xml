@@ -12,40 +12,58 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:background="#FFEF4A"> <!-- Set the background color to yellow with 50% transparency -->
 
+        <!-- Centered and larger font size title text -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:text="Event Title"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="16dp" />
+
+        <!-- Image centered below the title -->
         <ImageView
             android:id="@+id/photo"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:layout_below="@id/title"
+            android:layout_centerHorizontal="true"
             android:src="@drawable/ic_launcher_background" />
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/photo"
-            android:text="Event Title"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="8dp" />
-
-        <!-- Custom Spinner for selecting options -->
+        <!-- Custom Spinner centered below the image -->
         <com.example.myapplication.CustomSpinner
             android:id="@+id/optionSpinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/title"
+            android:layout_below="@id/photo"
+            android:layout_centerHorizontal="true"
             android:minHeight="48dp"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="16dp" />
 
+        <!-- Include the item_event layout -->
+        <include layout="@layout/item_event"
+            android:id="@+id/itemEventLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/optionSpinner"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp" />
+
+        <!-- EditText and Button centered below the spinner -->
         <EditText
             android:id="@+id/ticketCountInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/optionSpinner"
+            android:layout_below="@id/itemEventLayout"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
             android:hint="Introduceti numarul total de bilete"
             android:inputType="number"
@@ -59,7 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/ticketCountInput"
             android:text="Cumpara"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="16dp" />
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

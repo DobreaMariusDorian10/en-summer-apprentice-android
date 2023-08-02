@@ -1,8 +1,8 @@
 package com.example.myapplication;
-import android.content.Context;
-import android.util.AttributeSet;
-import android.widget.ArrayAdapter;
-import androidx.annotation.Nullable;
+        import android.content.Context;
+        import android.util.AttributeSet;
+        import android.widget.ArrayAdapter;
+        import androidx.annotation.Nullable;
 
 public class CustomSpinner extends androidx.appcompat.widget.AppCompatSpinner {
 
@@ -18,7 +18,7 @@ public class CustomSpinner extends androidx.appcompat.widget.AppCompatSpinner {
 
     private void init() {
         // Set default options ("VIP" and "Standard")
-        String[] defaultOptions = {"VIP", "Standard"};
+        String[] defaultOptions = {"Standard", "VIP"};
         setOptions(defaultOptions);
     }
 
