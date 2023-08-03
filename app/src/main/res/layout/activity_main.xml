@@ -15,62 +15,100 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
-        app:title="My Toolbar"
-        app:titleTextColor="#FFFFFF"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
+        <!-- Search Icon -->
+        <ImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="Search Icon"
+            android:src="@drawable/ic_search" />
+
+        <!-- Space between icons -->
+        <Space
+            android:id="@+id/iconSpace1"
+            android:layout_width="8dp"
+            android:layout_height="1dp"
+            app:layout_constraintStart_toEndOf="@id/searchIcon" />
+
+        <!-- Filter Icon -->
+        <ImageView
+            android:id="@+id/filterIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="Filter Icon"
+            android:src="@drawable/ic_filter"
+            app:layout_constraintStart_toEndOf="@id/iconSpace1" />
+
+        <!-- Space between icons -->
+        <Space
+            android:id="@+id/iconSpace2"
+            android:layout_width="8dp"
+            android:layout_height="1dp"
+            app:layout_constraintStart_toEndOf="@id/filterIcon" />
+
+        <!-- Navigation Arrow Icon -->
+        <ImageView
+            android:id="@+id/navigationArrowIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="Navigation Arrow Icon"
+            android:src="@drawable/ic_navigation_arrow_left"
+            app:layout_constraintStart_toEndOf="@id/iconSpace2" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- ScrollView with CardLayout includes -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            tools:ignore="ExtraText">
+
+
             <!-- Include the card layout template for Event 1 -->
-            <include
-                layout="@layout/card_layout"
+            <include layout="@layout/card_layout"
                 android:id="@+id/cardLayout1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp" />
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp" />
 
-            <!-- Include the card layout template for Event 2 -->
-            <include
-                layout="@layout/card_layout"
+            <!-- Include the card layout templates for other events -->
+            <include layout="@layout/card_layout"
                 android:id="@+id/cardLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/cardLayout1"
                 android:layout_marginTop="16dp" />
 
-            <!-- Include the card layout template for Event 3 -->
-            <include
-                layout="@layout/card_layout"
+            <include layout="@layout/card_layout"
                 android:id="@+id/cardLayout3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/cardLayout2"
                 android:layout_marginTop="16dp" />
 
-            <!-- Include the card layout template for Event 4 -->
-            <include
-                layout="@layout/card_layout"
+            <include layout="@layout/card_layout"
                 android:id="@+id/cardLayout4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/cardLayout3"
                 android:layout_marginTop="16dp" />
 
-            <!-- Include the card layout template for Event 5 -->
-            <include
-                layout="@layout/card_layout"
+            <include layout="@layout/card_layout"
                 android:id="@+id/cardLayout5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

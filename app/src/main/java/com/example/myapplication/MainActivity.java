@@ -8,17 +8,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    public void navigateToOrders(View view) {
-        Intent intent = new Intent(this, OrdersActivity.class);
-        startActivity(intent);
-    }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Find the Navigation Arrow Icon by its ID
+        ImageView navigationArrowIcon = findViewById(R.id.navigationArrowIcon);
+
+        // Set a click listener for the Navigation Arrow Icon
+        navigationArrowIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Start the OrdersActivity when the icon is clicked
+                Intent intent = new Intent(MainActivity.this, OrdersActivity.class);
+                startActivity(intent);
+            }
+        });
 // Find the Arrow Button by its ID
         // Set content for Event 1
         View cardLayout1 = findViewById(R.id.cardLayout1);
